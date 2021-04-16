@@ -22,9 +22,9 @@ class CreateEntriesTable extends Migration
             $table->date('start_date');
             $table->date('end_date');
             $table->string('faculty_name');
-            $table->string('faculty_contact')->unique();
+            $table->string('faculty_contact');
             $table->string('student_name');
-            $table->string('student_contact')->unique();
+            $table->string('student_contact');
             $table->json('keywords');
             $table->mediumText('seed_name');
             $table->mediumText('seeding_date');
