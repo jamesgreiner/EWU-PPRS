@@ -30,11 +30,16 @@ class CreateEntriesTable extends Migration
             $table->mediumText('seeding_date');
             $table->mediumText('plant_name');
             $table->mediumText('planting_date');
+            $table->mediumText('flora_other');
+            $table->mediumText('fauna_other');
             $table->mediumText('soil_amendment_type');
             $table->mediumText('soil_amendment_date');
+            $table->mediumText('soil_other');
+            $table->mediumText('hydrological_other');
             $table->mediumText('herbicide_treatment_type');
             $table->mediumText('herbicide_treatment_date');
             $table->mediumText('mowings');
+            $table->mediumText('management_other');
             $table->mediumText('data_description');
             $table->string('data_files');
             $table->string('metadata_files');

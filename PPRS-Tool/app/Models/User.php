@@ -58,4 +58,25 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    /** 
+    * sets a new user as a 'user' role by default 
+    */
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct($attributes);
+        self::created(function (User $user) {
+            if (!$user->roles()->get()->contains(2)) {
+                $user->roles()->attach(2);
+            }
+        });
+    }
+    
+    /** 
+    * add relationship roles and user belongs to many differnt relationship (roles)
+    */
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
 }

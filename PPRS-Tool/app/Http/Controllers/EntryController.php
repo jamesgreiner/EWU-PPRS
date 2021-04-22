@@ -34,8 +34,12 @@ class EntryController extends Controller
         $entry->seeding_date = request('seeding_date');
         $entry->plant_name = request('plant_name');
         $entry->planting_date = request('planting_date');
+        $entry->flora_other = request('flora_other');
+        $entry->fauna_other = request('fauna_other');
         $entry->soil_amendment_type = request('soil_amendment_type');
         $entry->soil_amendment_date = request('soil_amendment_date');
+        $entry->soil_other = request('soil_other');
+        $entry->hydrological_other = request('hydrological_other');
         $entry->herbicide_treatment_type = request('herbicide_treatment_type');
         $entry->herbicide_treatment_date = request('herbicide_treatment_date');
         $entry->mowings = request('mowings');

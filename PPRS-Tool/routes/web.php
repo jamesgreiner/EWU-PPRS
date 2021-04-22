@@ -42,6 +42,12 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+//routing to user dashboard if auth verified
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+//grouping of routes that need auth to grant access
+Route::group(['middleware' => 'auth'], function() {
+    Route::resource('users',\App\Http\Controllers\UserController::class);
+});
