@@ -127,9 +127,7 @@
                             <input type="checkbox" name="keywords[]" id="invertebrate" value="invertebrate">invertebrate<br>
                             <input type="checkbox" name="keywords[]" id="pollenator" value="pollenator">pollenator<br>
                             <input type="checkbox" name="keywords[]" id="gis" value="gis">GIS<br>
-                            <!--special case: 'other' - allows user to specify a non-listed keyword-->
                         </fieldset>
-                        
                     </div>
                 </div>
             </div>
@@ -140,8 +138,8 @@
                 <center><p style="color: black; font-size: 40px"><u>Section 2: Research Parameters</u></p></center>
                 <div>  
                     <br><br>
-                    <h3 style="margin-left: 10px;">PLANTING VARIABLES</h3>
-<!-------------------------------seeding section------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                    <h3 style="margin-left: 10px;">FLORA VARIABLES</h3>
+<!-------------------------------flora seeding section------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
                     <div style="display: inline-block;">
                         <label style="margin-left: 10px" for="seed_name">Seed Mix</label><br>
                         <textarea style="margin-left: 10px; resize: none" id="seed_name" name="seed_name" placeholder="Please list any seed mixes that were used." rows="8" cols="40" maxlength="500" size="500"></textarea><br>
@@ -150,7 +148,7 @@
                         <textarea style="margin-left: 10px; resize: none" id="seeding_date" name="seeding_date" placeholder="Please list the corresponding dates(mm/dd/yyyy) that the seedings were done." rows="8" cols="40" maxlength="500" size="500"></textarea>
                     </div>
                    
-<!-------------------------------planting section----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-------------------------------flora planting section----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
                     <div style="display: inline-block;">
                         <label style="margin-left: 10px" for="plant_name">Planting</label><br>
                         <textarea style="margin-left: 10px; resize: none" id="plant_name" name="plant_name" placeholder="Please list any plantings that were done in this study." rows="8" cols="40" maxlength="500" size="500"></textarea><br>
@@ -158,10 +156,24 @@
                         <label style="margin-left: 10px" for="planting_date">Planting Dates</label><br>
                         <textarea style="margin-left: 10px; resize: none" id="planting_date" name="planting_date" placeholder="Please list the corresponding dates(mm/dd/yyyy) that the plantings were done." rows="8" cols="40" maxlength="500" size="500"></textarea>
                     </div>
-                    
+<!-------------------------------flora other section----------------------------------------------------------------------------------------------------------------------------------------------------------------------->                   
+                    <div>
+                        <label style="margin-left: 10px" for="flora_other">Other</label><br>
+                        <textarea style="margin-left: 10px; resize: none" id="flora_other" name="flora_other" placeholder="Please describe any other flora variables that were modified including the dates of measurement/observation." rows="8" cols="40" maxlength="500" size="500"></textarea><br>
+                    </div>
+
                     <br><br>
 
-                    <h3 style="margin-left: 10px;">SOIL AMENDMENTS</h3>
+                    <h3 style="margin-left: 10px;">FAUNA VARIABLES</h3>
+<!-------------------------------fauna section--------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+                    <div style="display: inline-block;">
+                        <label style="margin-left: 10px" for="fauna_other">Other</label><br>
+                        <textarea style="margin-left: 10px; resize: none" id="fauna_other" name="fauna_other" placeholder="Please describe any fauna that were studied and list any corresponding dates of measurement/observation." rows="8" cols="40" maxlength="500" size="500"></textarea>
+                    </div>
+
+                    <br><br>
+
+                    <h3 style="margin-left: 10px;">SOIL VARIABLES</h3>
 <!-------------------------------soil section--------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
                     <div style="display: inline-block;">
                         <label style="margin-left: 10px" for="soil_amendment_type">Soil Amendment</label><br>
@@ -173,9 +185,23 @@
                         <textarea style="margin-left: 10px; resize: none" id="soil_amendment_date" name="soil_amendment_date" placeholder="Please list the correspponding dates(mm/dd/yyyy) for the amendments." rows="8" cols="40" maxlength="500" size="500"></textarea>
                     </div>
 
+                    <div style="display: inline-block;">
+                        <label style="margin-left: 10px" for="soil_other">Other</label><br>
+                        <textarea style="margin-left: 10px; resize: none" id="soil_other" name="soil_other" placeholder="Please describe other variables that were studied in the soil and list any corresponding dates of measurement/observation." rows="8" cols="40" maxlength="500" size="500"></textarea>
+                    </div>
+
                     <br><br>
 
-                    <h3 style="margin-left: 10px;">WEED MANAGEMENT</h3>
+                    <h3 style="margin-left: 10px;">HYDROLOGICAL VARIABLES</h3>
+<!-------------------------------hydrological section--------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+                    <div style="display: inline-block;">
+                        <label style="margin-left: 10px" for="hydrological_other">Other</label><br>
+                        <textarea style="margin-left: 10px; resize: none" id="hydrological_other" name="hydrological_other" placeholder="Please describe any hydrological variables that were studied and list any corresponding dates of measurement/observation." rows="8" cols="40" maxlength="500" size="500"></textarea>
+                    </div>
+
+                    <br><br>
+
+                    <h3 style="margin-left: 10px;">MANAGEMENT VARIABLES</h3>
 <!-------------------------------herbicide section---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
                     <div>
@@ -189,10 +215,18 @@
                             <textarea style="margin-left: 10px; resize: none" id="herbicide_treatment_date" name="herbicide_treatment_date" placeholder="Please list the corresponding dates(mm/dd/yyyy) for the treatments were done." rows="8" cols="40" maxlength="500" size="500"></textarea>
                         </div>
                     </div>
-<!-------------------------------weed management/mowing section---------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-------------------------------mowing section---------------------------------------------------------------------------------------------------------------------------------------------------------->
                     <div>
                         <label style="margin-left: 10px" for="mowings">Mowing</label><br>
                         <textarea style="margin-left: 10px; resize: none" id="mowings" name="mowings" placeholder="Please list any dates(mm/dd/yyyy) that mowing was done during this study." rows="8" cols="40" maxlength="500" size="500"></textarea>
+                    </div>
+
+
+
+                    
+                    <div style="display: inline-block;">
+                        <label style="margin-left: 10px" for="management_other">Other</label><br>
+                        <textarea style="margin-left: 10px; resize: none" id="management_other" name="management_other" placeholder="Please describe any other management that was done to the grass/weeds and list any corresponding dates of modification." rows="8" cols="40" maxlength="500" size="500"></textarea>
                     </div>
                 </div>
             </div>
