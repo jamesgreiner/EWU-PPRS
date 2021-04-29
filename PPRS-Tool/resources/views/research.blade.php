@@ -13,14 +13,12 @@
     body {
         margin: 0;
     }
-
     /* Style the navigation bar */
     .navbar {
         width: 100%;
         background-color: #555;
         overflow: auto;
     }
-
     /* Navbar links */
     .navbar a {
         float: left;
@@ -30,17 +28,11 @@
         text-decoration: none;
         font-size: 17px;
     }
-
     /* Navbar links on mouse-over */
     .navbar a:hover {
-        background-color: #ff0000;
+        background-color: #b7142e;
     }
-
-    /* Current/active navbar link */
-    .active {
-        background-color: #4CAF50;
-    }
-
+   
     /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
     @media screen and (max-width: 500px) {
         .navbar a {
@@ -51,12 +43,10 @@
   
     table{
       margin-top: 40px;
-
     }
     table,th,td{
   
       border-collapse: collapse;
-
     }
     td{
       background-color: white;
@@ -74,7 +64,6 @@
       background-color: #f1f1f1;
       font-weight: bold;
     }
-
   
   </style>
 
@@ -90,27 +79,17 @@
         <a class="active" href="/"><i class="fa fa-fw fa-home"></i> Home</a>
         <a href="/project-info"><i class="fa fa-fw fa-book"></i> Information</a>
         <a href="/projects"><i class="fa fa-fw fa-book"></i> Research Projects</a>
-        <a href="/view-data"><i class="fa fa-fw fa-search"></i> View Data</a>
-        <a href="/data-entry"><i class="fa fas fa-edit"></i> Enter Data</a>
         <a href="/faq"><i class="fa far fa-comment"></i> FAQ</a>
         <a href="/contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
-        <a href="/login"><i class="fa fa-fw fa-user"></i> Login</a>
-        <!--<input type="text" placeholder="Search">  commented out because it doesnt format correctly yet -->
+        <!--- If user logged in display dashboard link
+              If user NOT logged in display login link -->
+            @auth
+                <a href="{{ url('/dashboard') }}"><i class="fa fa-fw fa-user"></i> Dashboard</a>
+            @else
+                <a href="{{ route('login') }}"><i class="fa fa-fw fa-user"></i> Login</a>
+            @endauth
     </div> 
-    <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+ 
    
 <!--------------------------------------------------------------------------------------------------------------------------------->
 <table id="projectTable" class="center">
@@ -131,7 +110,6 @@
   var entryCount = 5;
 //--------------------------------------------------------------------------------------------
   //function researchTableSlot() {
-
     for (var i = 1; i < entryCount; i++){
       
       var table = document.getElementById("projectTable");
@@ -146,7 +124,6 @@
       cell1.style.align = "left";
      
     
-
       cell1.innerHTML = title.fontsize(6).bold();
       
       
@@ -156,7 +133,6 @@
       cell2.style.boarderBottom = "none";
       cell2.style.padding = "5px";
       cell2.style.backgroundColor = "#f1f1f1"; 
-
       cell2.innerHTML = authors;
       
       //add description row
@@ -165,7 +141,6 @@
       cell3.style.boarderBottom = "none";
       cell3.style.padding = "5px";
       cell3.style.backgroundColor = "#f1f1f1";
-
       cell3.innerHTML = description;
        
        //will implement for loop to add buttons to each file
@@ -175,7 +150,6 @@
       cell3.style.boarderBottom = "none";
       cell3.style.padding = "5px";
       cell3.style.backgroundColor = "#f1f1f1";
-
       cell3.innerHTML = infoButton + infoButton + infoButton;
     //}
   }

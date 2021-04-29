@@ -19,7 +19,10 @@ class PermissionsTableSeeder extends Seeder
                 'id'    => 1,
                 'title' => 'user_access',
             ],
-           
+            [
+                'id'    => 2,
+                'title' => 'data-entry_access',
+            ],
         ];
 
         Permission::insert($permissions);

@@ -4,14 +4,14 @@
     </div>
 
     <div class="mt-8 text-2xl">
-        Welcome to your Jetstream application!
+        Welcome to the data management portal!
     </div>
 
     <div class="mt-6 text-gray-500">
-        Laravel Jetstream provides a beautiful, robust starting point for your next Laravel application. Laravel is designed
-        to help you build your application using a development environment that is simple, powerful, and enjoyable. We believe
-        you should love expressing your creativity through programming, so we have spent time carefully crafting the Laravel
-        ecosystem to be a breath of fresh air. We hope you love it.
+        This section of the website allows both researchers and admins to enter data from a study and store it in a databse. Just click 'enter data' to begin.
+        Researchers are able to edit their own account information as well as edit any data they have submitted.
+        Admins are given the additional privelages of managing other users and deleting data from the database if necessary. 
+        They can also set up additional accounts for new researchers so their data can be entered as well.
     </div>
 </div>
 

@@ -15,10 +15,10 @@ class PermissionRoleTableSeeder extends Seeder
      */
     public function run()
     {
-        //Admin: user access
-        Role::find(1)->permissions()->attach(1);
-        //user: ... access
-        //Role::find(2)->permissions()->attach([1, 2]);
-
+        //Admin: user access & data-entry access
+        Role::find(1)->permissions()->attach([1, 2]);
+        
+        //user: data-entry access
+        Role::find(2)->permissions()->attach(2);
     }
 }

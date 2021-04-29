@@ -255,128 +255,33 @@
     </form>
         <input type="button" value="Cancel" onclick="history.back(-1)"/>
         
-    <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") 
-        {
-        //collect values of input fields
-            //section 1
-            $study_ID = $_POST['study_ID'];
-            $study_name = $_POST['study_name'];
-            $study_description = $_POST['study_description'];
-            $start_date = $_POST['start_date'];
-            $end_date = $_POST['end_date'];
+    
 
-            $faculty_name = $_POST['faculty_name'];
-            $faculty_contact = $_POST['faculty_contact'];
-            $student_name = $_POST['student_name'];
-            $student_contact = $_POST['student_contact'];
+        <div class="text-center">
+        
+        <form name="save-multiple-files" method="POST"  action="{{ url('save-multiple-files') }}" accept-charset="utf-8" enctype="multipart/form-data">
 
-            $soil = $_POST['soil'];
-            $plant = $_POST['plant'];
-            $biochar = $_POST['biochar'];
-            $soil = $_POST['soil'];
-            $nematode = $_POST['nematode'];
-            $archaeology = $_POST['archaeology'];
-            $hydrology = $_POST['hydrology'];
-            $lead = $_POST['lead'];
-            $annual = $_POST['annual'];
-            $perennial = $_POST['perennial'];
-            $weed_management = $_POST['weed_management'];
-            $vertebrate = $_POST['vertebrate'];
-            $invertebrate = $_POST['invertebrate'];
-            $pollenator = $_POST['pollenator'];
-            $GIS = $_POST['GIS'];
-            //end section 1
-
-            //section 2
-            $seed_mix = $_POST['seed_mix'];
-            $seeding_dates = $_POST['seeding_dates'];
-            $plantings = $_POST['plantings'];
-            $planting_dates = $_POST['planting_dates'];
-            $soil_amendment = $_POST['soil_amendment'];
-            $soil_amendment_dates = $_POST['soil_amendment_dates'];
-            $herbicide_treatment = $_POST['herbicide_treatment'];
-            $herbicide_dates = $_POST['herbicide_dates'];
-            $mowings = $_POST['mowings'];
-            //end section 2
-
-            //section 3 - files and photos
-
-
-            
-            //error checking?
-            if (empty($name)) 
-            {
-                echo "Name is empty";
-            } 
-            else 
-            {
-                //insert into database tables
-                echo $name;
-
-                $insertion_query1 = "INSERT INTO entries (
-                                    study_id,  
-                                    study_description,
-                                    start_date,
-                                    end_date,
-                                    student_lead,
-                                    student_contact,
-                                    faculty_lead,
-                                    faculty_contact
-                                    ) VALUES (
-                                        $study_ID,
-                                        $study_description,
-                                        $start_date,
-                                        $end_date,
-                                        $student_name,
-                                        $student_contact,
-                                        $faculty_name,
-                                        $faculty_contact)";
-
-                $insertion_query2 = "INSERT INTO studies (
-                    study_id,  
-                    study_name
-                    ) VALUES (
-                        $study_ID,
-                        $study_name)";
-
-                $insertion_query3 = "INSERT INTO seed_mix (
-                    seed_name,  
-                    seeding_date
-                    ) VALUES (
-                        $seed_mix,
-                        $seeding_dates)";
-                
-                $insertion_query4 = "INSERT INTO plants (
-                    plant_name,  
-                    planting_date
-                    ) VALUES (
-                        $plantings,
-                        $planting_dates)";
-                
-                $insertion_query5 = "INSERT INTO soil_amd (
-                    soil_amd_type,  
-                    soil_amd_date
-                    ) VALUES (
-                        $soil_amendment,
-                        $soil_amendment_dates)";
-
-                $insertion_query6 = "INSERT INTO herbicide_treatment (
-                    herbicide_treatment_type,  
-                    herbicide_treatment_date
-                    ) VALUES (
-                        $herbicide_treatment,
-                        $herbicide_dates)";
+        @csrf
                     
-                $insertion_query7 = "INSERT INTO weed_management (
-                    weed_man_type,  
-                    ) VALUES (
-                        $herbicide_treatment,
-                        $herbicide_dates)";
-            }
-        }
-    ?>
+            <div class="row">
 
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="file" name="files[]" placeholder="Choose files" multiple >
+                        
+                    </div>
+                    @error('files')
+                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                    @enderror
+                </div>
+                    
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+                </div>
+            </div>     
+        </form>
+
+        </div>
 
     </body>
 </html>

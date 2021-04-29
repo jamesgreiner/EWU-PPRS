@@ -2,17 +2,23 @@
 
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-  <meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <style>
-            
+
+    <style>
+        /* full page */
+    body {
+        margin: 0;
+    }
+  
     /* Style the body map */
     .map_placement {
-        background-color: lightslategrey;
+        background-color:grey;
+        color:white;
         width: auto;
-        height: 400px;
+        height: 700px;
         text-align: center;
         line-height:350px;        
         border-left: 60px whitesmoke;
@@ -23,14 +29,19 @@
     }
      /* Style the body paragraph */
     .body_paragraph {
-        background-color: lightslategrey;
+        background-color: grey;
+        color:white;
         width: auto;
-        height: 400px;        
+        height: 500px;        
         border-left: 60px whitesmoke;
         border-right: 60px whitesmoke;
         padding: 50px;
         margin: 60px;
       
+    }
+    .div-1{
+        background-color:#b7142e;
+        color:white;
     }
     /* Style the navigation bar */
     .navbar {
@@ -38,7 +49,6 @@
         background-color: #555;
         overflow: auto;
     }
-
     /* Navbar links */
     .navbar a {
         float: left;
@@ -48,75 +58,37 @@
         text-decoration: none;
         font-size: 17px;
     }
-
     /* Navbar links on mouse-over */
     .navbar a:hover {
-        background-color: #ff0000;
+        background-color: #b7142e;
     }
-
-    /* Current/active navbar link */
-    .active {
-        background-color: #4CAF50;
-    }
-
+    
     /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
     @media screen and (max-width: 500px) {
         .navbar a {
             float: none;
             display: block;
-        }   
+        } 
     } 
+        </style>
+    </head>
 
-    
-    body{
-        margin: 0;
-    }
-
-    .div-1{
-        background-color:#b7142e;
-        color:white;
-    }
-
-    .div-2{
-        background-color:grey;
-        color:white;
-    }
-    </style> 
-    <title>EWU Prairie Restoration Site Contacts</title>  
-</head>
-    <body>
-
+    <body class="antialiased">
     <div class="header">
         <img src="images/ewu.jpg" alt="Banner EWU Logo">
     </div>
-    <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-     <!-- navbar menu  -->
-     <!-- Repalce # with link location-->
     <div class="navbar">
-        <a class="active" href="/home"><i class="fa fa-fw fa-home"></i> Home</a>
-        <a href="/information"><i class="fa fa-fw fa-book"></i> Information</a>
-        <a href="/research"><i class="fa fa-fw fa-book"></i> Research Projects</a>
-        <a href="/view-data"><i class="fa fa-fw fa-search"></i> View Data</a>
-        <a href="/data-entry"><i class="fa fas fa-edit"></i> Enter Data</a>
+        <a class="active" href="/"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a href="/project-info"><i class="fa fa-fw fa-book"></i> Information</a>
+        <a href="/projects"><i class="fa fa-fw fa-book"></i> Research Projects</a>
         <a href="/faq"><i class="fa far fa-comment"></i> FAQ</a>
         <a href="/contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
-        <a href="/login"><i class="fa fa-fw fa-user"></i> Login</a>
-        <!--<input type="text" placeholder="Search">  commented out because it doesnt format correctly yet -->
+        @auth
+            <a href="{{ url('/dashboard') }}"><i class="fa fa-fw fa-user"></i> Dashboard</a>
+        @else
+            <a href="{{ route('login') }}"><i class="fa fa-fw fa-user"></i> Login</a>
+        @endauth
     </div> 
-        
        <!---------------Title-------------------------------->
        <center>
         <div class="div-1">
