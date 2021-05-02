@@ -94,7 +94,7 @@
 <!--------------------------------------------------------------------------------------------------------------------------------->
 <table id="projectTable" class="center">
   <tr>
-    <td class="table_header" ><h2>Research Projects</h2></td>
+    <td class="table_header" ><h2 style="background-color: #b7142e;">Research Projects</h2></td>
   </tr>
 </table>
 <br>

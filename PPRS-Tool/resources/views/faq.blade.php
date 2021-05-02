@@ -7,73 +7,67 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <style>
-        /* full page */
-    body {
-        margin: 0;
-    }
-  
-    /* Style the body map */
-    .map_placement {
-        background-color:grey;
-        color:white;
-        width: auto;
-        height: 700px;
-        text-align: center;
-        line-height:350px;        
-        border-left: 60px whitesmoke;
-        border-right: 60px whitesmoke;
-        padding: 50px;
-        margin: 60px;
-     
-    }
-     /* Style the body paragraph */
-    .body_paragraph {
-        background-color: grey;
-        color:white;
-        width: auto;
-        height: 500px;        
-        border-left: 60px whitesmoke;
-        border-right: 60px whitesmoke;
-        padding: 50px;
-        margin: 60px;
-      
-    }
-    .div-1{
-        background-color:#b7142e;
-        color:white;
-    }
-    /* Style the navigation bar */
-    .navbar {
-        width: 100%;
-        background-color: #555;
-        overflow: auto;
-    }
-    /* Navbar links */
-    .navbar a {
-        float: left;
-        text-align: center;
-        padding: 12px;
-        color: white;
-        text-decoration: none;
-        font-size: 17px;
-    }
-    /* Navbar links on mouse-over */
-    .navbar a:hover {
-        background-color: #b7142e;
-    }
+        <style>
+            /* full page */
+            body {
+                margin: 0;
+            }
     
-    /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
-    @media screen and (max-width: 500px) {
-        .navbar a {
-            float: none;
-            display: block;
-        } 
-    } 
+            .page-header{
+                background-color:#b7142e;
+                color:white;
+                text-align: center;
+                line-height: 4rem;
+                margin-top: 0;
+            }
+
+            .faq-head{
+                font-size: 30px;
+                font-weight: bold;
+                margin-left: 1rem;
+            }
+
+            .faq-body{
+                font-size: 16px;
+                font-weight: normal;
+                margin-left: 2rem; 
+            }
+
+            .faq-divider{
+                border-bottom: black;
+                border-bottom-style: solid;
+            }
+
+            
+            .navbar {
+                width: 100%;
+                background-color: #555;
+                overflow: auto;
+            }
+           
+            .navbar a {
+                float: left;
+                text-align: center;
+                padding: 12px;
+                color: white;
+                text-decoration: none;
+                font-size: 17px;
+            }
+            
+            .navbar a:hover {
+                background-color: #b7142e;
+            }
+            
+            @media screen and (max-width: 500px) 
+            {
+                .navbar a {
+                    float: none;
+                    display: block;
+                } 
+            } 
         </style>
     </head>
 
-    <body class="antialiased">
     <div class="header">
         <img src="images/ewu.jpg" alt="Banner EWU Logo">
     </div>
@@ -89,26 +83,47 @@
             <a href="{{ route('login') }}"><i class="fa fa-fw fa-user"></i> Login</a>
         @endauth
     </div> 
+   
     
-<h2 class="faq_title">Frequently Asked Questions:</h2>
 
+<h1 class="page-header" style="border-bottom: black; border-bottom-style: solid; margin-bottom: 0">Frequently Asked Questions</h1>
 
-
-<button class="faq_head">-- I can't edit my research project? </button>
+<div class="faq-head">What is the Palouse Prairie Restoration Project?</div>
 <div class="content">
-  <p class="faq_body">Only submitting user of project can edit project data.<br>
-     Submitting user must be logged in to edit submitted data. </p>
+    <p class="faq-body">
+        Please visit the information tab for a more detailed look at what the project aims to accomplish.
+    </p>
 </div>
+<div class="faq-divider"></div>
 
-<button class="faq_head">-- How do I delete a submitted research project?</button>
+<div class="faq-head">How do I edit data that was submitted for a research project?</div>
 <div class="content">
-  <p class="faq_body">To delete a submitted research project please contact the biology department.  </p>
+    <p class="faq-body">
+        Any data submitted for a project can only be edited by the person who submitted it. 
+        If you need to edit data that you submitted, please make sure you are logged into your account for this option to be available.
+    </p>
 </div>
+<div class="faq-divider"></div>
 
-<button class="faq_head">-- FAQ head</button>
+<div class="faq-head">How do I edit data that was submitted for a research project?</div>
 <div class="content">
-  <p class="faq_body">Faq body</p>
+    <p class="faq-body">
+        Any data submitted for a project can only be edited by the person who submitted it. 
+        If you need to edit data that you submitted, please make sure you are logged into your account for this option to be available.
+    </p>
 </div>
+<div class="faq-divider"></div>
+
+<div class="faq-head">How do I delete data that was submitted for a research project?</div>
+<div class="content">
+    <p class="faq-body">
+        To delete any data submitted for a project, you must have admin access. 
+        If you are a student researcher, please contact the biology department.
+    </p>
+</div>
+<div class="faq-divider"></div>
+
+
 
 <script>
 var coll = document.getElementsByClassName("faq_head");
