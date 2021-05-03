@@ -9,7 +9,11 @@ class MultipleFileUploadContoller extends Controller
 {
     public function index()
     {
-        return view('home');
+        $files = File::all();
+
+        return view('research',[
+            'files' => $files,
+        ]);
     }
  
     public function store(Request $request)

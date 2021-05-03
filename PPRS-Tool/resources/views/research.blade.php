@@ -1,13 +1,9 @@
 @extends('layouts.format')
-
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
   <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-
   <style>
     /* */
     body {
@@ -64,14 +60,13 @@
       background-color: #f1f1f1;
       font-weight: bold;
     }
-  
   </style>
 
+   <!-- Styles -->
+   <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
 
-
 <body>
-<!---------------------ADD BANNER AND NAVBAR HERE--------------------------------------------------------------------------------->
     <div class="header">
         <img src="images/ewu.jpg" alt="Banner EWU Logo">
     </div>
@@ -89,71 +84,86 @@
                 <a href="{{ route('login') }}"><i class="fa fa-fw fa-user"></i> Login</a>
             @endauth
     </div> 
- 
    
-<!--------------------------------------------------------------------------------------------------------------------------------->
-<table id="projectTable" class="center">
+
+<div>
+<table id="projectTable" width="100%">
   <tr>
-    <td class="table_header" ><h2 style="background-color: #b7142e;">Research Projects</h2></td>
+  <td class="table_header" ><h2>Research Projects</h2></td>
   </tr>
 </table>
-<br>
+    <!---tailwin table templet used https://tailwindui.com/components/application-ui/lists/tables -->
+        <div class="max-w-6xl mx-auto py-10 sm:px-6 lg:px-8">
+          
+            <div class="flex flex-col">
+                <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                    <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                        <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                        
+                            <table class="min-w-full divide-y divide-gray-200 w-full">
+                                <thead>
+            
+                                    
+                                <tr>
+                                    <th scope="col" width="50" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        ID
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Study Name
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Student Lead
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Faculty Lead
+                                                             </th>
+                                    <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Keywords
+                                    </th>
+                                    <th scope="col" width="200" class="px-6 py-3 bg-gray-50">
 
-<script>
-//------------------------------------------------------------------------------------------
-  //data will be imported from database
-  var title = "Research Title";
-  //change # with research page
-  var infoButton = ' <button type="button" onclick="#">File</button>';
-  var authors = "---Research Contributors";
-  var description = "---Research Description";
-  var entryCount = 5;
-//--------------------------------------------------------------------------------------------
-  //function researchTableSlot() {
-    for (var i = 1; i < entryCount; i++){
-      
-      var table = document.getElementById("projectTable");
-      
-      //add title row
-      var row = table.insertRow(-1);
-      var cell1 = row.insertCell(0);
-      cell1.style.backgroundColor = "#b7142e"; 
-      cell1.style.color = "white";
-      cell1.style.padding = "5px";
-      cell1.style.boarderBottom = "none";
-      cell1.style.align = "left";
-     
-    
-      cell1.innerHTML = title.fontsize(6).bold();
-      
-      
-      //add contributors row
-      var row = table.insertRow(-1);
-      var cell2= row.insertCell(0);
-      cell2.style.boarderBottom = "none";
-      cell2.style.padding = "5px";
-      cell2.style.backgroundColor = "#f1f1f1"; 
-      cell2.innerHTML = authors;
-      
-      //add description row
-      var row = table.insertRow(-1);
-      var cell3 = row.insertCell(0);
-      cell3.style.boarderBottom = "none";
-      cell3.style.padding = "5px";
-      cell3.style.backgroundColor = "#f1f1f1";
-      cell3.innerHTML = description;
-       
-       //will implement for loop to add buttons to each file
-       //add file row
-       var row = table.insertRow(-1);
-      var cell3 = row.insertCell(0);
-      cell3.style.boarderBottom = "none";
-      cell3.style.padding = "5px";
-      cell3.style.backgroundColor = "#f1f1f1";
-      cell3.innerHTML = infoButton + infoButton + infoButton;
-    //}
-  }
-</script>
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                               
+                               <!---Loop thru all study entries in users database -->
+                               
+                                @foreach ($entries as $entry)
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                            {{$entry->id}}
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                            {{$entry->study_name}}
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                            {{$entry->student_name}}
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                            {{$entry->faculty_name}}
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                        @foreach ($entry->keywords as $keyword)
+                                            {{ $loop->first ? '' : ',  ' }}
+                                            <span class="nice">{{  $keyword }}</span>
+                                        @endforeach
+                                        </td>   
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                            <a  class="text-blue-600 hover:text-blue-900 mb-2 mr-2">View</a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 
 </body>
 </html>

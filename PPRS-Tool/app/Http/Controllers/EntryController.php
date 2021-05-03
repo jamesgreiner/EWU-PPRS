@@ -2,20 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Entry;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
+use Symfony\Component\HttpFoundation\Response;
 
 class EntryController extends Controller
 {
     public function index()
     {
-        //return view('entry');
+        $entries = Entry::all();
+        return view('research', [
+            'entries' => $entries,
+        ]);    
     }
 
     public function create()
     {
         return view('entry');
     }
-
+    public function show()
+    {
+        $entries = Entry::all();
+        return view('research', compact('entries'));    
+    }
     public function store()
     {
         //capture data for entries table
@@ -43,6 +53,7 @@ class EntryController extends Controller
         $entry->herbicide_treatment_type = request('herbicide_treatment_type');
         $entry->herbicide_treatment_date = request('herbicide_treatment_date');
         $entry->mowings = request('mowings');
+        $entry->management_other = request('management_other');
         $entry->data_description = request('data_description');
         
         //data files
@@ -55,4 +66,12 @@ class EntryController extends Controller
         $entry->save();
         return redirect('/');
     }
+
+        /**
+     * Display the specified user.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+ 
 }
