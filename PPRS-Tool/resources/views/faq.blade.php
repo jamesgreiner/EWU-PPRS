@@ -13,13 +13,7 @@
                 margin: 0;
             }
     
-            .page-header{
-                background-color:#b7142e;
-                color:white;
-                text-align: center;
-                line-height: 4rem;
-                margin-top: 0;
-            }
+            
 
             .faq-head{
                 font-size: 30px;
@@ -28,7 +22,7 @@
             }
 
             .faq-body{
-                font-size: 16px;
+                font-size: 20px;
                 font-weight: normal;
                 margin-left: 2rem; 
             }
@@ -96,20 +90,21 @@
 </div>
 <div class="faq-divider"></div>
 
-<div class="faq-head">How do I edit data that was submitted for a research project?</div>
+<div class="faq-head">Who can I get in touch with to inquire about the project?</div>
 <div class="content">
     <p class="faq-body">
-        Any data submitted for a project can only be edited by the person who submitted it. 
-        If you need to edit data that you submitted, please make sure you are logged into your account for this option to be available.
+       You can visit the contact tab in the navigation menu. 
+       There you will find contact information for the individuals involved in the project from each department.
     </p>
 </div>
 <div class="faq-divider"></div>
 
-<div class="faq-head">How do I edit data that was submitted for a research project?</div>
+<div class="faq-head">How do I make changes to data that was submitted for a research project?</div>
 <div class="content">
     <p class="faq-body">
         Any data submitted for a project can only be edited by the person who submitted it. 
         If you need to edit data that you submitted, please make sure you are logged into your account for this option to be available.
+        Otherwise, please reach out to the faculty lead listed on the data you wanted to change.
     </p>
 </div>
 <div class="faq-divider"></div>
@@ -119,6 +114,24 @@
     <p class="faq-body">
         To delete any data submitted for a project, you must have admin access. 
         If you are a student researcher, please contact the biology department.
+    </p>
+</div>
+<div class="faq-divider"></div>
+
+<div class="faq-head">How do I change my password?</div>
+<div class="content">
+    <p class="faq-body">
+        To change your password, ensure that you are logged in to your account. Once logged in, navigate to the user dashboard and click on your name in the upper right-hand corner. 
+        From there, you can select 'Profile' in the dropdown menu, and you will see a section that allows you to update your password.
+    </p>
+</div>
+<div class="faq-divider"></div>
+
+<div class="faq-head">Who should I contact if I'm running into problems with any part of the management tool?</div>
+<div class="content">
+    <p class="faq-body">
+        If any 'bugs' or technical difficulties occur, please reach out to the current team leader responsible for building and maintaining this website.
+        This information can be found under the 'Website and Databse Experience' section of the Contact page.
     </p>
 </div>
 <div class="faq-divider"></div>
