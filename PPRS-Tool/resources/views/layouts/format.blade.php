@@ -65,17 +65,62 @@
             font-weight: bold;
             color: white;
             }
-            .page-header{
+            .page-header {
                 background-color:#b7142e;
-                color:white;
-                text-align: center;
+                border-bottom: black; 
+                border-bottom-style: solid;
+                color: white;
+                font-size: 40px;
+                font-family: 'Times New Roman', Times, serif;
+                font-weight: bold;
                 line-height: 5rem;
+                text-align: center;
                 margin-top: 0;
+                margin-bottom: 0;
             }
+            .faq-head {
+                font-size: 30px;
+                font-weight: bold;
+                margin-left: 1rem;
+            }
+
+            .faq-body {
+                font-size: 20px;
+                font-weight: normal;
+                margin-left: 2rem; 
+            }
+
+            .faq-divider {
+                border-bottom: black;
+                border-bottom-style: solid;
+            }
+             /* Style the body map */
+            .home-photo-container{
+                align-content: center;
+                border-color: grey;
+                border-width: 50rem;
+                color: white;
+                
+
+
+            }
+            /* Style the body paragraph */
+            .body_paragraph {
+                background-color: grey;
+                color:white;
+                width: auto;
+                height: 500px;        
+                border-left: 60px whitesmoke;
+                border-right: 60px blue;
+                padding: 50px;
+                margin: 60px;
+            
+            }
+            
         </style>
     </head>
         
-    <body>
+    <body class="antialiased">
         <div class="header">
             <img src="images/ewu.jpg" alt="Banner EWU Logo">
         </div>
@@ -85,13 +130,13 @@
             <a href="/projects"><i class="fa fa-fw fa-book"></i> Research Projects</a>
             <a href="/faq"><i class="fa far fa-comment"></i> FAQ</a>
             <a href="/contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
-            <!--- If user logged in display dashboard link
-                If user NOT logged in display login link -->
-                @auth
-                    <a href="{{ url('/dashboard') }}"><i class="fa fa-fw fa-user"></i> Dashboard</a>
-                @else
-                    <a href="{{ route('login') }}"><i class="fa fa-fw fa-user"></i> Login</a>
-                @endauth
+            <!-- If user logged in, display dashboard link
+                 If user NOT logged in, display login link -->
+            @auth
+                <a href="{{ url('/dashboard') }}"><i class="fa fa-fw fa-user"></i> Dashboard</a>
+            @else
+                <a href="{{ route('login') }}"><i class="fa fa-fw fa-user"></i> Login</a>
+            @endauth
         </div>
         @yield('content')
     
