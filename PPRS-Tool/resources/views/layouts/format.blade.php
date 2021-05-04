@@ -94,27 +94,57 @@
                 border-bottom: black;
                 border-bottom-style: solid;
             }
-             /* Style the body map */
-            .home-photo-container{
-                align-content: center;
-                border-color: grey;
-                border-width: 50rem;
-                color: white;
-                
+        
+            .home-content {
+                background-color: lightgrey;
+                color: black;
+                width: auto;
+                display: block; 
+                margin-left: 6rem; 
+                margin-right: 6rem;
+                margin-top: 0rem;
+                margin-bottom: 2rem;
+            }
 
+            .home-photo {
+                border: solid lightgrey 6rem; 
+                display: block; 
+                margin-left: auto; 
+                margin-right: auto;
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .home-intro {
+                font-weight: bold;
+                font-size: xx-large;
+                margin-left: 0.5rem;
+            }
+
+            .home-body {
+                font-size: x-large;
+                margin-left: 1rem;
+                padding-bottom: 0.5rem;
+            }
+
+            .card {
+                
+            }
+
+            .card-body {
 
             }
-            /* Style the body paragraph */
-            .body_paragraph {
-                background-color: grey;
-                color:white;
-                width: auto;
-                height: 500px;        
-                border-left: 60px whitesmoke;
-                border-right: 60px blue;
-                padding: 50px;
-                margin: 60px;
-            
+
+            .card-footer {
+
+            }
+
+            .card-header {
+
+            }
+
+            .card-image {
+
             }
             
         </style>
@@ -122,7 +152,7 @@
         
     <body class="antialiased">
         <div class="header">
-            <img src="images/ewu.jpg" alt="Banner EWU Logo">
+            <img src="images/ewu-banner.jpg" alt="EWU name and logo">
         </div>
         <div class="navbar">
             <a class="active" href="/"><i class="fa fa-fw fa-home"></i> Home</a>

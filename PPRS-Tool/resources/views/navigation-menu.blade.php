@@ -7,7 +7,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="/">
-                        <img src="images/ewueagle.png"  alt="Banner EWU Logo" class="block h-9 w-auto" />
+                        <img src="images/ewueagle.png"  alt="EWU logo" class="block h-9 w-auto" />
                     </a>
                 </div>
 
@@ -24,7 +24,7 @@
                         </x-jet-nav-link>
                     </div>
 
-                <!---Dashboard Link for users menu item for admin users -->
+                <!-- Dashboard Link for users menu item for admin users -->
                 @can('user_access')
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-jet-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.*')">
