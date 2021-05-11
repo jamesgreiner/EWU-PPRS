@@ -83,8 +83,9 @@
             .faq-head {
                 font-size: 30px;
                 font-weight: bold;
-                margin-left: 1rem;
-                
+                padding-left: 1rem;
+                background-color:grey;
+                color:white;
             }
             .faq-body {
                 font-size: 20px;
@@ -128,18 +129,6 @@
                 margin-left: 1rem;
                 padding-bottom: 0.5rem;
             }
-            .card {
-                
-            }
-            .card-body {
-            }
-            .card-footer {
-            }
-            .card-header {
-            }
-            .card-image {
-            }
-            
         </style>
     </head>
         

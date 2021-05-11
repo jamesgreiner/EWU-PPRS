@@ -1,50 +1,62 @@
-@extends('layouts.format')
+
 
 <!DOCTYPE html>
 <html>
 <head>
-    <style>    
-        * 
-        {
-            box-sizing: border-box;
-            padding: 0;
-            margin: 0;
-        }
-
-        .entire_form 
-        {
-	        display: grid;
-            grid-template-columns: auto auto auto;
-            background: lightgrey;
-            height: 1000px;
-        }
- 
-        .header 
-        {
-	        color: black;
-        }
- 
-        .section1 
-        {
-	        border-style: solid;
-        }
- 
-        .section2 
-        {
-            border-style: solid;
-        }
-            
-        .section3 
-        {
-	        border-style: solid;
-        }
- 
-        .footer 
-        {    
-            height: 50px;
-        }
-    </style>
-
+<style>    
+            * {
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+            }
+            .page-header {
+                    background-color:#b7142e;
+                    border-bottom: black; 
+                    border-bottom-style: solid;
+                    color: white;
+                    font-size: 40px;
+                    font-family: 'Times New Roman', Times, serif;
+                    font-weight: bold;
+                    line-height: 5rem;
+                    text-align: center;
+                    margin-top: 0;
+                    margin-bottom: 0;
+            }
+            .entry-form {
+                display: grid;
+                grid-template-columns: auto auto auto;
+                background: lightgrey;
+                height: auto;
+            }
+            .section-header {
+                color: black; 
+                font-size: 40px;
+                text-align: center;
+            }
+    
+            .section1 {
+                border-left-style: solid;
+                border-right-style: solid;
+            }
+    
+            .section2 {
+                border-right-style: solid;
+            }
+                
+            .section3 {
+                border-right-style: solid;
+            }
+            .sub-section-header {
+                font-family: 'Courier New', Courier, monospace;
+                font-size: x-large;
+                font-weight: 600;
+                margin-left: 1rem;
+            }
+    
+            .footer {    
+                height: 50px;
+            }
+        </style>
     <title>Data Entry Form</title>
 </head>
 
@@ -58,7 +70,7 @@
 <!-------------------------------This form will be processed and the input will be stored in a mysql database--------------------------------------------------------------------------------------------------->
     <form action="/entries" method="POST" enctype="multipart/form-data">
 <!-------------------------------This div is the outer grid of the data entry form that encloses all sections--------------------------------------------------------------------------------------------------->
-        <div class="entire_form">
+        <div class="entry-form">
         @csrf
 <!-------------------------------Section 1: Information--------------------------------------------------------------------------------------------------------------------------------------------------------->
             <div class="section1">
