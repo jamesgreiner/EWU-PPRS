@@ -1,34 +1,29 @@
 @extends('layouts.format')
 <!DOCTYPE html>
-<html >
+<html>
     <head>
         <style>
-            .div-1{
-                background-color:#b7142e;
-                color:white;
-            }
-
-            .div-2{
-                background-color:grey;
-                color:white;
-                margin-top: 0;
+            .department-title {
+                background-color: grey;
+                border-bottom: black solid;
+                border-top: black solid;
+                color: white;
+                font-size: x-large;
+                font-weight: bold;
+                padding-bottom: 0.5rem;
+                padding-left: 1rem;
+                padding-top: 0.5rem;
+                
             }
         </style>
     </head>
-    <body class="antialiased">
+    <body>
         @section('content')
         <!-- Title for the contact page-->
         <div class="page-header">Contact Information</div>
         
-        <!--------Biology Department----------------------------->
-        <div class="div-2">    
-            
-            <h2>
-            
-                Biology Department
-            </h2>
-            <div class="faq-divider"></div>
-        </div>
+        <!-- Biology Department -->
+        <div class="department-title" style="border-top: none;">Biology Department</div>
         <div>
             <ul>
                 <li>
@@ -41,7 +36,7 @@
 
                 <li>
                     Dr. Justin Bastow, Biology Professor: 
-                     <ul>
+                    <ul>
                         <li>Phone: 509-359-2810</li>
                         <li>Email: jbastow@ewu.edu</li>
                     </ul>  
@@ -50,13 +45,7 @@
         </div>
 
         <!--------Geography----------------------------->
-        <div class="div-2">  
-            <div class="faq-divider"></div>  
-            <h2>
-                Geography Department
-            </h2>
-            <div class="faq-divider"></div>
-        </div>
+        <div class="department-title">Geography Department</div>
         <div>
             <ul>
                 <li>
@@ -70,14 +59,7 @@
 
         <!--------CS Department-------------------------------->
         <div>
-            <div class="div-2">    
-                <div class="faq-divider"></div>
-                <h2>
-                    Website and Database Experience
-                </h2>
-                <div class="faq-divider"></div>
-            </div>
-
+            <div class="department-title">Website and Database Experience</div>
             <div>
                 <ul>
                     <li>
@@ -101,13 +83,7 @@
 
         <!--------EWU Office of Sustainability--------------->
         <div>        
-            <div class="div-2"> 
-                <div class="faq-divider"></div>   
-                <h2>
-                    EWU Office Of Sustainability
-                </h2>
-                <div class="faq-divider"></div>
-            </div>
+            <div class="department-title">EWU Office Of Sustainability</div>
             
             <div>    
                 <ul>
@@ -121,9 +97,6 @@
                 </ul>
             </div> 
         </div>       
-        <br><br>
-        <!------------------------------------------------>
-        
         @endsection
     </body>
 </html>

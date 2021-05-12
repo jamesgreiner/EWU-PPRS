@@ -67,28 +67,28 @@
             }
             .page-header {
                 background-color:#b7142e;
-                border-top:black;
-                border-top-style: solid;
-                border-bottom: black; 
-                border-bottom-style: solid;
+                border-bottom: black solid;
+                border-top:black solid;
                 color: white;
-                font-size: 40px;
                 font-family: 'Times New Roman', Times, serif;
+                font-size: 40px;
                 font-weight: bold;
                 line-height: 5rem;
-                text-align: center;
                 margin-top: 0;
                 margin-bottom: 0;
+                text-align: center;
             }
             .faq-head {
-                font-size: 30px;
+                font-size: x-large;
                 font-weight: bold;
+                padding-bottom: 0.5rem;
                 padding-left: 1rem;
+                padding-top: 0.5rem;
                 background-color:grey;
                 color:white;
             }
             .faq-body {
-                font-size: 20px;
+                font-size: large;
                 font-weight: normal;
                 margin-left: 2rem; 
                 

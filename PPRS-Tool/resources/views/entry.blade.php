@@ -31,7 +31,9 @@
             .section-header {
                 color: black; 
                 font-size: 40px;
+                margin-bottom: 1rem;
                 text-align: center;
+                text-decoration: underline;
             }
     
             .section1 {
@@ -56,48 +58,58 @@
             .footer {    
                 height: 50px;
             }
+
+            label {
+                font-size: large;
+                font-weight: 500;
+            }
+
+            input {
+                
+                margin-top: 0.25rem; 
+            }
         </style>
     <title>Data Entry Form</title>
 </head>
 
 <body>
     <div class="header">
-        <img src="images/ewu.jpg" alt="Banner EWU Logo">
+        <img src="images/ewu-banner.jpg" alt="EWU name and logo">
     </div>
 
-    <div id="header"><center><header style="font-size: 50px">Data Entry Form</header></center></div>
+    <div class="page-header">Data Entry Form</div>
     
-<!-------------------------------This form will be processed and the input will be stored in a mysql database--------------------------------------------------------------------------------------------------->
-    <form action="/entries" method="POST" enctype="multipart/form-data">
-<!-------------------------------This div is the outer grid of the data entry form that encloses all sections--------------------------------------------------------------------------------------------------->
+    <!-- form start -->
+    <form accept-charset="utf-8" action="/entries" enctype="multipart/form-data" method="POST">
+        <!-- This div holds the entire entry form -->
         <div class="entry-form">
         @csrf
-<!-------------------------------Section 1: Information--------------------------------------------------------------------------------------------------------------------------------------------------------->
+            <!-- Section 1: Information -->
             <div class="section1">
-                <center><p style="color: black; font-size: 40px"><u>Section 1: Information</u></p></center>
+                <p class="section-header">Information</p>
                 <div>
-                    <div style="display: flex;">
-                        <div style="margin-left: 10px">
-                            <label for="study_ID">Study ID</label><br>
-                            <input type="text" id="study_id" name="study_id"placeholder="123" maxlength="10" size="15"><br><br>
-                            
+                    <div style="display: flex; margin-bottom: 2rem">
+                        <div style="margin-left: 1rem">
+                            <label for="study_id">Study ID</label><br>
+                            <input type="text" id="study_id" name="study_id" placeholder="123" maxlength="10" size="15"><br><br><br><br><br>
                             <label for="study_name">Study Name</label><br>
-                            <input type="text" id="study_name" name="study_name"placeholder="Effects of Biochar Concentration" maxlength="50" size="40">
+                            <input type="text" id="study_name" name="study_name" placeholder="Effects of Biochar Concentration" maxlength="100" size="45">
                         </div>
 
-                        <div style="margin-left: 100px">
-                            <label style="margin-left: 10px" for="study_description">Study Description</label><br>
-                            <textarea style="margin-left: 10px; resize: none" id="study_description" name="study_description" placeholder="Please briefly describe what this study is researching." rows="12" cols="60" maxlength="500" size="500"></textarea>
+                        <div style="margin-left: 3rem; margin-right: 3rem">
+                            <label for="study_description">Study Description</label><br>
+                            <textarea style="resize: none" id="study_description" name="study_description" placeholder="Please briefly describe what this study is researching." rows="12" cols="60" maxlength="500" size="500"></textarea>
                         </div>
                     </div>
+
+                    <div style="display: flex; margin-bottom: 2rem">
+                        <label style="margin-left: 1rem; margin-right: 0.5rem" for="start_date">Start Date</label><br>
+                        <input type="date" id="start_date" name="start_date">
+
+                        <label style="margin-right: 0.5rem" for="end_date">End Date</label><br>
+                        <input type="date" id="end_date" name="end_date">
+                    </div>
                     
-                    <br><br>
-
-                    <label style="margin-left: 10px" for="start_date">Start Date</label>
-                    <input type="date" id="start_date" name="start_date">
-
-                    <label style="margin-left: 77px" for="end_date">End Date</label>
-                    <input type="date" id="end_date" name="end_date"><br><br><br>
 
                     <div style="display:flex;">
 <!-------------------------------faculty information section---------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -122,24 +134,23 @@
                     <br><br><br>
 
 <!-------------------------------project keywords section-------------------------------------------------------------------------------------------------------------------------------------------------------->
-                    <div style="margin-left: 10px;">
-                        <fieldset>
-                            <label>Keywords associated with study</label><br>
-                            <input type="checkbox" name="keywords[]" id="soil" value="soil">soil<br>
-                            <input type="checkbox" name="keywords[]" id="plant" value="plant">plant<br>
-                            <input type="checkbox" name="keywords[]" id="biochar" value="biochar">biochar<br>
-                            <input type="checkbox" name="keywords[]" id="nematode" value="nematode">nematode<br>
-                            <input type="checkbox" name="keywords[]" id="archaeology" value="archaeology">archaeology<br>
-                            <input type="checkbox" name="keywords[]" id="hydrology" value="hydrology">hydrology<br>
-                            <input type="checkbox" name="keywords[]" id="lead" value="lead">lead<br>
-                            <input type="checkbox" name="keywords[]" id="annual" value="annual">annual<br>
-                            <input type="checkbox" name="keywords[]" id="perennial" value="perennial">perennial<br>
-                            <input type="checkbox" name="keywords[]" id="weed_management" value="weed_management">weed management<br>
-                            <input type="checkbox" name="keywords[]" id="vertebrate" value="vertebrate">vertebrate<br>
-                            <input type="checkbox" name="keywords[]" id="invertebrate" value="invertebrate">invertebrate<br>
-                            <input type="checkbox" name="keywords[]" id="pollenator" value="pollenator">pollenator<br>
-                            <input type="checkbox" name="keywords[]" id="gis" value="gis">GIS<br>
-                        </fieldset>
+                    
+                    <div class="sub-section-header">Keywords</div>
+                        <div style="margin-left: 1rem;">
+                            <input type="checkbox" name="keywords[]" id="soil" value="soil"> soil<br>
+                            <input type="checkbox" name="keywords[]" id="plant" value="plant"> plant<br>
+                            <input type="checkbox" name="keywords[]" id="biochar" value="biochar"> biochar<br>
+                            <input type="checkbox" name="keywords[]" id="nematode" value="nematode"> nematode<br>
+                            <input type="checkbox" name="keywords[]" id="archaeology" value="archaeology"> archaeology<br>
+                            <input type="checkbox" name="keywords[]" id="hydrology" value="hydrology"> hydrology<br>
+                            <input type="checkbox" name="keywords[]" id="lead" value="lead"> lead<br>
+                            <input type="checkbox" name="keywords[]" id="annual" value="annual"> annual<br>
+                            <input type="checkbox" name="keywords[]" id="perennial" value="perennial"> perennial<br>
+                            <input type="checkbox" name="keywords[]" id="weed_management" value="weed_management"> weed management<br>
+                            <input type="checkbox" name="keywords[]" id="vertebrate" value="vertebrate"> vertebrate<br>
+                            <input type="checkbox" name="keywords[]" id="invertebrate" value="invertebrate"> invertebrate<br>
+                            <input type="checkbox" name="keywords[]" id="pollenator" value="pollenator"> pollenator<br>
+                            <input type="checkbox" name="keywords[]" id="gis" value="gis"> GIS<br>
                     </div>
                 </div>
             </div>
@@ -147,10 +158,10 @@
 
 <!-------------------------------Section 2: Research Parameters--------------------------------------------------------------------------------------------------------------------------------------------------------->
             <div class="section2">
-                <center><p style="color: black; font-size: 40px"><u>Section 2: Research Parameters</u></p></center>
+                <p class="section-header">Research Parameters</p>
                 <div>  
                     <br><br>
-                    <h3 style="margin-left: 10px;">FLORA VARIABLES</h3>
+                    <div class="sub-section-header">FLORA VARIABLES</div>
 <!-------------------------------flora seeding section------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
                     <div style="display: inline-block;">
                         <label style="margin-left: 10px" for="seed_name">Seed Mix</label><br>
@@ -176,7 +187,7 @@
 
                     <br><br>
 
-                    <h3 style="margin-left: 10px;">FAUNA VARIABLES</h3>
+                    <div class="sub-section-header">FAUNA VARIABLES</div>
 <!-------------------------------fauna section--------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
                     <div style="display: inline-block;">
                         <label style="margin-left: 10px" for="fauna_other">Other</label><br>
@@ -185,7 +196,7 @@
 
                     <br><br>
 
-                    <h3 style="margin-left: 10px;">SOIL VARIABLES</h3>
+                    <div class="sub-section-header">SOIL VARIABLES</div>
 <!-------------------------------soil section--------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
                     <div style="display: inline-block;">
                         <label style="margin-left: 10px" for="soil_amendment_type">Soil Amendment</label><br>
@@ -204,7 +215,7 @@
 
                     <br><br>
 
-                    <h3 style="margin-left: 10px;">HYDROLOGICAL VARIABLES</h3>
+                    <div class="sub-section-header">HYDROLOGICAL VARIABLES</div>
 <!-------------------------------hydrological section--------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
                     <div style="display: inline-block;">
                         <label style="margin-left: 10px" for="hydrological_other">Other</label><br>
@@ -213,7 +224,7 @@
 
                     <br><br>
 
-                    <h3 style="margin-left: 10px;">MANAGEMENT VARIABLES</h3>
+                    <div class="sub-section-header">MANAGEMENT VARIABLES</div>
 <!-------------------------------herbicide section---------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
                     <div>
@@ -245,7 +256,7 @@
 
 <!-------------------------------Section 3: Data------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
             <div class="section3">
-                <center><p style="color: black; font-size: 40px"><u>Section 3: Data</u></p></center>
+            <p class="section-header">Data</p>
                 <div style="margin-left: 10px">
                     <label for="data_description">Description of Data</label><br>
                     <textarea style="resize: none" id="data_description" name="data_description" placeholder="Please describe the data being submitted." rows="15" cols="75" maxlength="1000" size="1000"></textarea> <br><br>

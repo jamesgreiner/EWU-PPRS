@@ -60,11 +60,10 @@
                 If any 'bugs' or technical difficulties occur, please reach out to the current team leader responsible for building and maintaining this website.
                 This information can be found under the 'Website and Databse Experience' section of the Contact page.
             </p>
-            <div class="faq-divider"></div>
 
             <!-- script -->
             <script>
-            var col = document.getElementsByClassName("faq_head");
+            var col = document.getElementsByClassName("faq-head");
             var i;
             for (i = 0; i < col.length; i++) 
             {
