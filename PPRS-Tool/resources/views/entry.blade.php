@@ -1,79 +1,10 @@
-
+@extends('layouts.entry-format')
 
 <!DOCTYPE html>
 <html>
 <head>
 <style>    
-            * {
-                box-sizing: border-box;
-                padding: 0;
-                margin: 0;
-            }
-            .left-inner-element {
-                margin-left: 1rem;
-            }
-
-            .page-header {
-                    background-color:#b7142e;
-                    border-bottom: black; 
-                    border-bottom-style: solid;
-                    color: white;
-                    font-size: 40px;
-                    font-family: 'Times New Roman', Times, serif;
-                    font-weight: bold;
-                    line-height: 5rem;
-                    text-align: center;
-                    margin-top: 0;
-                    margin-bottom: 0;
-            }
-
-            .entry-form {
-                display: grid;
-                grid-template-columns: auto auto auto;
-                background: lightgrey;
-                height: auto;
-            }
-
-            .section-header {
-                color: black; 
-                font-size: 40px;
-                margin-bottom: 1rem;
-                text-align: center;
-                text-decoration: underline;
-            }
-    
-            .section1 {
-                border-left-style: solid;
-                border-right-style: solid;
-            }
-    
-            .section2 {
-                border-right-style: solid;
-            }
-                
-            .section3 {
-                border-right-style: solid;
-            }
-            .sub-section-header {
-                font-family: 'Courier New', Courier, monospace;
-                font-size: x-large;
-                font-weight: 600;
-                margin-left: 1rem;
-            }
-
-            label {
-                font-size: large;
-                font-weight: 500;
-            }
-
-            input {
-                
-                margin-top: 0.25rem; 
-            }
-
-            textarea {
-                resize: none;
-            }
+            
         </style>
     <title>Data Entry Form</title>
 </head>
@@ -86,7 +17,7 @@
     <div class="page-header">Data Entry Form</div>
     
     <!-- form start -->
-    <form accept-charset="utf-8" action="/entries" enctype="multipart/form-data" method="POST">
+    <form accept-charset="utf-8" action="entry-files.blade.php" enctype="multipart/form-data" method="POST">
         <!-- This div holds the entire entry form -->
         <div class="entry-form">
         @csrf
@@ -246,56 +177,8 @@
                     </div>
                 </div>
             </div>
-
-<!-------------------------------Section 3: Data------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <div class="section3">
-            <p class="section-header">Data</p>
-                <div class="left-inner-element">
-                    <label for="data_description">Description of Data</label><br>
-                    <textarea id="data_description" name="data_description" placeholder="Please describe the data being submitted." rows="15" cols="75" maxlength="1000" size="1000"></textarea> <br><br>
-
-                    <label  for="metadata_files">Upload Metadata File(s)</label><br>
-                    <input type="file" name="metadata_files" id="metadata_files" multiple><br><br>
-
-                    <label for="data_files">Upload Data File(s)</label><br>
-                    <input type="file" name="data_files" id="data_files" multiple><br><br>
-
-                    <label for="project_files">Upload Project(report, poster, presentation)</label><br>
-                    <input type="file" name="project_files" id="project_files" multiple>
-                </div>
-            </div>
-        </div>
-
-            <!--submit button for data form-->
-            <input type="submit" value="Submit Data">
-    </form>
-        <!-- <input type="button" value="Cancel" onclick="history.back(-1)"/> -->
-        
-        <div class="text-center">
-        
-        <form name="save-multiple-files" method="POST"  action="{{ url('save-multiple-files') }}" accept-charset="utf-8" enctype="multipart/form-data">
-
-        @csrf
-                    
-            <div class="row">
-
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <input type="file" name="files[]" placeholder="Choose files" multiple >
-                        
-                    </div>
-                    @error('files')
-                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                    @enderror
-                </div>
-                    
-                <div class="col-md-12">
-                    <button type="submit" class="btn btn-primary" id="submit">Submit</button>
-                </div>
-            </div>     
+           
+            <input type="submit" value="Next">
         </form>
-
-        </div>
-
     </body>
 </html>
