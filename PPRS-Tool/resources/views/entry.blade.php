@@ -1,3 +1,7 @@
+<?php
+    session_start ();
+?>
+
 @extends('layouts.entry-format')
 
 <!DOCTYPE html>
@@ -17,7 +21,7 @@
     <div class="page-header">Data Entry Form</div>
     
     <!-- form start -->
-    <form accept-charset="utf-8" action="entry-files.blade.php" enctype="multipart/form-data" method="POST">
+    <form accept-charset="utf-8" action="{{ url('entry-files') }}" enctype="multipart/form-data" method="POST">
         <!-- This div holds the entire entry form -->
         <div class="entry-form">
         @csrf
@@ -177,8 +181,7 @@
                     </div>
                 </div>
             </div>
-           
-            <input type="submit" value="Next">
         </form>
+        <input type="submit" value="Next">
     </body>
 </html>

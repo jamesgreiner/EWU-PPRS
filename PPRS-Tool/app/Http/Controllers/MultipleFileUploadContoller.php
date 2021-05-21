@@ -9,10 +9,15 @@ class MultipleFileUploadContoller extends Controller
 {
     public function index()
     {
-        $files = File::all();
+        $metadata_files = File::all();
+        $data_files = File::all();
+        $project_files = File::all();
+
 
         return view('research',[
-            'files' => $files,
+            'metadata_files'=> $metadata_files,
+            'data_files' => $data_files,
+            'project_files' => $project_files
         ]);
     }
  
@@ -20,14 +25,18 @@ class MultipleFileUploadContoller extends Controller
     {
          
         $validatedData = $request->validate([
-        'files' => 'required',
-        'files.*' => 'mimes:csv,txt,xlx,xls,pdf'
+        'metadata_files' => 'required',
+        'metadata_files.*' => 'mimes:csv,txt,xlx,xls,pdf',
+        'data_files' => 'required',
+        'data_files.*' => 'mimes:csv,txt,xlx,xls,pdf',
+        'project_files' => 'required',
+        'project_files.*' => 'mimes:csv,txt,xlx,xls,pdf'
         ]);
  
  
-        if($request->hasfile('files'))
+        if($request->hasfile('data_files'))
          {
-            foreach($request->file('files') as $key => $file)
+            foreach($request->file('data_files') as $key => $file)
             {
                 $path = $file->store('public/files');
                 $name = $file->getClientOriginalName();
@@ -41,7 +50,7 @@ class MultipleFileUploadContoller extends Controller
  
         File::insert($insert);
  
-        return redirect('files-upload')->with('status', 'Multiple File has been uploaded Successfully');
+        return redirect('files-upload')->with('status', 'Data files have been uploaded successfully.');
  
     }
 }

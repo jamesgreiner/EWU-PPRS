@@ -44,9 +44,6 @@ Route::group(['middleware' => 'auth'], function() {
     
     //route for admins to view users registed
     Route::resource('users',\App\Http\Controllers\UserController::class);
-    
-    //for admins to view list of all entries: protected behind auth for admin
-    //Route::get('/entry-form/entries', [EntryController::class, 'index']);
 
     //for entering data into the database: protected behind auth for researchers
     Route::get('/entry-form', [EntryController::class, 'create']);
@@ -58,4 +55,9 @@ Route::group(['middleware' => 'auth'], function() {
     //routes for file upload
     Route::get('files-upload', [MultipleFileUploadContoller::class, 'index']);
     Route::post('save-multiple-files', [MultipleFileUploadContoller::class, 'store']);
+    
+    Route::post('/entry-files', function () {
+        return view('entry-files');
+    });
 });
+
