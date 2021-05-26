@@ -49,15 +49,13 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/entry-form', [EntryController::class, 'create']);
 
     //for saving the form data to the database
-    Route::post('/entries', [EntryController::class, 'store']);
+    Route::post('/entry-files', [EntryController::class, 'store']);
 
 
     //routes for file upload
     Route::get('files-upload', [MultipleFileUploadContoller::class, 'index']);
     Route::post('save-multiple-files', [MultipleFileUploadContoller::class, 'store']);
-    
-    Route::post('/entry-files', function () {
-        return view('entry-files');
-    });
+    //Route::post('save-multiple-files', [MultipleFileUploadContoller::class, 'store']);
+    //Route::post('/entry-files', [EntryController::class, 'store'], [MultipleFileUploadContoller::class, 'store']);
 });
 

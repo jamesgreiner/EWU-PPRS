@@ -45,29 +45,29 @@
                                     <tbody class="bg-white divide-y divide-gray-200">
                                     <!-- Loop through all study entries in the users database table -->
                                     @foreach ($entries as $entry)
-                                        <tr>
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-black">
-                                                {{$entry->id}}
-                                            </td>
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-black">
-                                                {{$entry->study_name}}
-                                            </td>
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-black">
-                                                {{$entry->student_name}}
-                                            </td>
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-black">
-                                                {{$entry->faculty_name}}
-                                            </td>
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-black">
-                                            @foreach ($entry->keywords as $keyword)
-                                                {{ $loop->first ? '' : ',  ' }}
-                                                <span class="nice">{{  $keyword }}</span>
-                                            @endforeach
-                                            </td>   
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                                <button class="inline-block border-2 border-blue-900 bg-white text-blue-900 text-md hover:bg-blue-500 py-1 px-3 rounded-xl">View</button>
-                                            </td>
-                                        </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-black">
+                                            {{$entry->id}}
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-black">
+                                            {{$entry->study_name}}
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-black">
+                                            {{$entry->student_name}}
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-black">
+                                            {{$entry->faculty_name}}
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-black">
+                                        @foreach ($entry->keywords as $keyword)
+                                            {{ $loop->first ? '' : ',  ' }}
+                                            <span class="nice">{{  $keyword }}</span>
+                                        @endforeach
+                                        </td>   
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                            <button class="inline-block border-2 border-green-700 bg-green-300 text-black text-md hover:bg-green-600 py-1 px-3 rounded-xl">View</button>
+                                        </td>
+                                    </tr>
                                     @endforeach
                                     </tbody>
                                 </table>

@@ -16,7 +16,7 @@ class CreateEntriesTable extends Migration
         Schema::create('entries', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('study_id');
+            $table->string('study_id')->unique();
             $table->string('study_name');
             $table->mediumText('study_description');
             $table->date('start_date');
@@ -40,10 +40,6 @@ class CreateEntriesTable extends Migration
             $table->mediumText('herbicide_treatment_date');
             $table->mediumText('mowings');
             $table->mediumText('management_other');
-            $table->mediumText('data_description');
-            $table->string('data_files');
-            $table->string('metadata_files');
-            $table->string('project_files');
         });
     }
 

@@ -37,51 +37,37 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <form name="save-multiple-files" method="POST"  action="{{ url('save-multiple-files') }}" accept-charset="utf-8" enctype="multipart/form-data">
-        @csrf       
-            <div>
-                <label for="data_description">Description of Data</label><br>
-                <textarea id="data_description" name="data_description" placeholder="Please describe the data being submitted." rows="15" cols="75" maxlength="1000" size="1000"></textarea> <br><br>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label for="data_files[]">Data Files</label><br>
-                        <input type="file" name="data_files[]" multiple >  
-                    </div>
+        <div class="header">
+            <img src="images/ewu-banner.jpg" alt="EWU name and logo">
+        </div>
 
-                    @error('data_files')
-                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                    @enderror
-                </div>
-                    
-                <div class="col-md-12">
-                    <button type="submit" class="btn btn-primary" id="submit">Submit</button>
-                </div>
-            </div>     
-        </form>
-    
-    <!-- <div class="section3">
-            <p class="section-header">Data</p>
+        <div class="page-header">Upload Files</div>
+
+        <form name="save-multiple-files" method="POST"  action="{{ url('save-multiple-files') }}" accept-charset="utf-8" enctype="multipart/form-data">
+        @csrf  
+            <div class="entry-form">
                 <div class="left-inner-element">
+                    <input type="hidden" id="study_id" name="study_id" value="{{ $_POST['study_id'] }}">
                     <label for="data_description">Description of Data</label><br>
                     <textarea id="data_description" name="data_description" placeholder="Please describe the data being submitted." rows="15" cols="75" maxlength="1000" size="1000"></textarea> <br><br>
-
-                    <label  for="metadata_files">Upload Metadata File(s)</label><br>
-                    <input type="file" name="metadata_files" id="metadata_files" multiple><br><br>
-
-                    <label for="data_files">Upload Data File(s)</label><br>
-                    <input type="file" name="data_files" id="data_files" multiple><br><br>
-
-                    <label for="project_files">Upload Project(report, poster, presentation)</label><br>
-                    <input type="file" name="project_files" id="project_files" multiple>
                 </div>
-            </div>
-        </div> -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group" style="margin-bottom: 2rem;">
+                            <label for="files[]">Files</label><br>
+                            <input type="file" name="files[]" multiple >  
+                        </div>
 
-            
-        
-        
-
+                        @error('data_files')
+                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                        @enderror
+                    </div>
+                        
+                    <div class="col-md-12">
+                        <button type="submit" id="submit">Submit Data</button>
+                    </div>
+                </div> 
+            </div>        
+        </form>
     </body>
 </html>

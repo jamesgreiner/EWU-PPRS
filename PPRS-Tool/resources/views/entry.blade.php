@@ -21,7 +21,7 @@
     <div class="page-header">Data Entry Form</div>
     
     <!-- form start -->
-    <form accept-charset="utf-8" action="{{ url('entry-files') }}" enctype="multipart/form-data" method="POST">
+    <form accept-charset="utf-8" action="/entry-files" enctype="multipart/form-data" method="POST">
         <!-- This div holds the entire entry form -->
         <div class="entry-form">
         @csrf
@@ -95,6 +95,8 @@
                             <input type="checkbox" name="keywords[]" id="pollenator" value="pollenator"> pollenator<br>
                             <input type="checkbox" name="keywords[]" id="gis" value="gis"> GIS<br>
                     </div>
+
+                    
                 </div>
             </div>
 

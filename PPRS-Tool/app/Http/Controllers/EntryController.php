@@ -54,17 +54,10 @@ class EntryController extends Controller
         $entry->herbicide_treatment_date = request('herbicide_treatment_date');
         $entry->mowings = request('mowings');
         $entry->management_other = request('management_other');
-        $entry->data_description = request('data_description');
-        
-        //data files
-        $entry->data_files = request('data_files');
-        $entry->metadata_files = request('metadata_files');
-        $entry->project_files = request('project_files');
-
-        
+       
         //save entry form data and return to home screen
         $entry->save();
-        return redirect('/');
+        return view('entry-files');
     }
 
         /**
