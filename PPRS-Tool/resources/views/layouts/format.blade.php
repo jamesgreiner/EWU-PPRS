@@ -139,7 +139,7 @@
         <div class="navbar">
             <a class="active" href="/"><i class="fa fa-fw fa-home"></i> Home</a>
             <a href="/project-info"><i class="fa fa-fw fa-book"></i> Information</a>
-            <a href="/projects"><i class="fa fa-fw fa-book"></i> Research Projects</a>
+            <a href="/research"><i class="fa fa-fw fa-book"></i> Research Projects</a>
             <a href="/faq"><i class="fa far fa-comment"></i> FAQ</a>
             <a href="/contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
             <!-- If user logged in, display dashboard link

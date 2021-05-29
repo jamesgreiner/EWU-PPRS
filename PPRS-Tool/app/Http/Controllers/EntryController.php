@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Entry;
+use App\Models\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use Symfony\Component\HttpFoundation\Response;
@@ -12,7 +13,7 @@ class EntryController extends Controller
     public function index()
     {
         $entries = Entry::all();
-        return view('research', [
+        return view('research.index', [
             'entries' => $entries,
         ]);    
     }
@@ -21,10 +22,12 @@ class EntryController extends Controller
     {
         return view('entry');
     }
-    public function show()
+    public function show($id)
     {
-        $entries = Entry::all();
-        return view('research', compact('entries'));    
+        $entry = Entry::findorfail($id);
+        $file = File::findorfail($id);
+       
+        return view('research.show', ['entry' => $entry],['file' => $file]);    
     }
     public function store()
     {

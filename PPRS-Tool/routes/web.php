@@ -15,8 +15,8 @@ Route::get('/project-info', function () {
     return view('information');
 });
 
-//for seeing all current projects that have been stored in the database
-Route::get('/projects', [EntryController::class, 'index'] );
+//handles routing for research folder index and show
+Route::resource('research',\App\Http\Controllers\EntryController::class);
 
 //for viewing frequently asked questions
 Route::get('/faq', function () {
@@ -41,7 +41,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //grouping of routes that need auth to grant access user/admin
 Route::group(['middleware' => 'auth'], function() {
     
-    
     //route for admins to view users registed
     Route::resource('users',\App\Http\Controllers\UserController::class);
 
@@ -51,11 +50,12 @@ Route::group(['middleware' => 'auth'], function() {
     //for saving the form data to the database
     Route::post('/entry-files', [EntryController::class, 'store']);
 
-
     //routes for file upload
     Route::get('files-upload', [MultipleFileUploadContoller::class, 'index']);
     Route::post('save-multiple-files', [MultipleFileUploadContoller::class, 'store']);
+
     //Route::post('save-multiple-files', [MultipleFileUploadContoller::class, 'store']);
     //Route::post('/entry-files', [EntryController::class, 'store'], [MultipleFileUploadContoller::class, 'store']);
+
 });
 

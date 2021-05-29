@@ -65,7 +65,7 @@
                                         @endforeach
                                         </td>   
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                            <button class="inline-block border-2 border-green-700 bg-green-300 text-black text-md hover:bg-green-600 py-1 px-3 rounded-xl">View</button>
+                                        <a href="{{ route('research.show', $entry->id) }}" button class="inline-block border-2 border-green-700 bg-green-300 text-black text-md hover:bg-green-600 py-1 px-3 rounded-xl">View</button></a>
                                         </td>
                                     </tr>
                                     @endforeach
