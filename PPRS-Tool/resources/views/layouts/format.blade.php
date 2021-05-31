@@ -11,8 +11,8 @@
 
         <style>
             /* */
-            body {
-                margin: 0;
+            *{
+                font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
             }
             /* Style the navigation bar */
             .navbar {
@@ -99,7 +99,7 @@
             }
         
             .home-content {
-                background-color: lightgrey;
+                background-color: grey;
                 color: black;
                 width: auto;
                 display: block; 
@@ -109,7 +109,7 @@
                 margin-left:4rem;  
             }
             .home-photo {
-                border: solid lightgrey 6rem; 
+                border: solid grey 6rem; 
                 display: block; 
                 margin-top:3rem;
                 margin-bottom:2rem;

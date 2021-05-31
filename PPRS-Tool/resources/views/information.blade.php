@@ -4,10 +4,56 @@
     <head>
     <!---Used this CSS from specter that is not in other parts of the site to allow for more pleasant spacing and formating along with
         the .tab, ul, li. The div-1 and div-2 is used to divide sections and be easier to differentiat-->
-    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <!--<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">-->
+    <!-- The Styles below have a section for .cards, these are pulled from the specter CSS from above. We are not able to use this whole External CSS due to 
+        it messing up some pieces in the navbar, therefore just the .card section is copied in. -->
     <style>
+        
         body{
             margin: 0;
+            background: #fff;
+            color: #3b4351;
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            font-size: .8rem;
+            overflow-x: hidden;
+            text-rendering:optimizeLegibility
+
+                }
+
+                h1, h2, h3, h4, h5, h6 {
+            color: inherit;
+            font-weight: 500;
+            line-height: 1.2;
+            margin-bottom: .5em;
+            margin-top:0
+        }
+
+        .h1, .h2, .h3, .h4, .h5, .h6 {
+            font-weight:500
+        }
+
+        .h1, h1 {
+            font-size:2rem
+        }
+
+        .h2, h2 {
+            font-size:1.6rem
+        }
+
+        .h3, h3 {
+            font-size:1.4rem
+        }
+
+        .h4, h4 {
+            font-size:1.2rem
+        }
+
+        .h5, h5 {
+            font-size:1rem
+        }
+
+        .h6, h6 {
+            font-size:.8rem
         }
 
         .tab { 
@@ -29,6 +75,48 @@
             color:white;
         }
 
+        .card {
+            background: #fff;
+            border: .05rem solid #dadee4;
+            border-radius: .1rem;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-direction: column;
+            flex-direction:column
+        }
+
+        .card .card-body, .card .card-footer, .card .card-header {
+            padding: .8rem;
+            padding-bottom:0
+        }
+
+        .card .card-body:last-child, .card .card-footer:last-child, .card .card-header:last-child {
+            padding-bottom:.8rem
+        }
+
+        .card .card-body {
+            -ms-flex: 1 1 auto;
+            flex:1 1 auto;
+        }
+
+        .card .card-image {
+            padding-top:.8rem
+        }
+
+        .card .card-image:first-child {
+            padding-top:0
+        }
+
+        .card .card-image:first-child img {
+            border-top-left-radius: .1rem;
+            border-top-right-radius:.1rem
+        }
+
+        .card .card-image:last-child img {
+            border-bottom-left-radius: .1rem;
+            border-bottom-right-radius:.1rem
+        }
+
     </style>
     </head>
     
@@ -36,11 +124,9 @@
         @section('content')
             <!-- Title for information page -->
             <div class="page-header">General Information</div>
-            <br>
 
            <!-----------EWU Overview--------------------------------------------------------------------->
         <div class="card">
-            <div class="faq-divider"></div>
             <center>
             <div class="div-2">
                 <div class="card-header">
@@ -359,9 +445,9 @@
                         <img src="images/image31.jpg" width="350" height="250" alt="image30.jpg">
                         <img src="images/image32.jpg" width="350" height="250" alt="image32.jpg">
                         </center>
-
+                    </div>
             <!-----------Community Engagement and Partnerships-------------------------------------------------------->
-            <br><br>
+                    <br><br>
                     <div class="card">
                         <div class="faq-divider"></div>
                         <center>
