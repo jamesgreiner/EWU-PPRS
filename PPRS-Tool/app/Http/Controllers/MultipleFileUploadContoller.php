@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\File;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\Response;
 
 class MultipleFileUploadContoller extends Controller
 {
@@ -23,7 +25,7 @@ class MultipleFileUploadContoller extends Controller
 
         $validatedData = $request->validate([
         'files' => 'required',
-        'files.*' => 'mimes:csv,txt,xlx,xls,pdf'
+        'files.*' => 'mimes:csv,txt,xlx,xls,pdf,jpg'
         ]);
  
  
@@ -47,4 +49,10 @@ class MultipleFileUploadContoller extends Controller
         return redirect('/')->with('status', 'Multiple File has been uploaded Successfully');
  
     }
+
+    public function download(Request $request)
+    {
+     
+    }
+
 }
