@@ -1,14 +1,7 @@
 @extends('layouts.format')
+
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
-
- 
-        </style>
-    </head>
-    
-    
     <body>
         @section('content')
             <!-- Title for home page -->
@@ -17,7 +10,7 @@
             <!-- Photo of campus -->
             <img class="home-photo" src="images/ewu-campus.jpg" height="650" alt="Arial photgraph of EWU campus">
 
-            <!-- Overall project description-->
+            <!-- Overall project description -->
             <div class="home-content">
                 <div class="home-intro"><?php include('files/Intro.txt'); ?></div>
 

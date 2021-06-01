@@ -9,7 +9,6 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use Symfony\Component\HttpFoundation\Response;
-use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -54,11 +53,7 @@ class UserController extends Controller
     public function store(StoreUserRequest $request)
     {
         $user = User::create($request->validated());
-
-        $request->user()->fill([
-            'password' => Hash::make($request->newPassword)
-        ])->save();
-
+        
         //assign the user and sync the roles
         $user->roles()->sync($request->input('roles', []));
 
