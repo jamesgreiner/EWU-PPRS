@@ -2,8 +2,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <!---Used this CSS from specter that is not in other parts of the site to allow for more pleasant spacing and formating along with
-        the .tab, ul, li. The div-1 and div-2 is used to divide sections and be easier to differentiat-->
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
     <style>
         body{
@@ -28,6 +26,7 @@
             background-color:grey;
             color:white;
         }
+        
 
     </style>
     </head>

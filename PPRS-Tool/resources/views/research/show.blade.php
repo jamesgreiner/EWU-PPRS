@@ -29,6 +29,20 @@
                     display: block;
                 }   
             } 
+
+            .page-header {
+                background-color:#b7142e;
+                border-bottom: black solid;
+                border-top:black solid;
+                color: white;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 40px;
+                font-weight: bold;
+                line-height: 5rem;
+                margin-top: 0;
+                margin-bottom: 0;
+                text-align: center;
+            }
     </style>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -54,24 +68,23 @@
         </div>
 
         <div class="page-header">Research Projects</div>
+
+
             <!-- This example requires Tailwind CSS v2.0+ -->
         <div class="bg-white shadow overflow-hidden sm:rounded-lg">
         <div class="px-4 py-5 sm:px-6">
-            <h3 class="text-lg leading-6 font-medium text-gray-900">
-            Research Study
+            <h3 class="text-xl leading-6 font-medium text-gray-900">
+            {{$entry->study_name}}
             </h3>
-            <p class="mt-1 max-w-2xl text-sm text-gray-500">
-            Study ID: {{$entry->study_id}}
-            </p>
         </div>
         <div class="border-t border-gray-200">
             <dl>
             <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-gray-500">
-                Study Name:
+            <dt class="text-sm font-medium text-gray-500">
+                Study ID:
                 </dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                {{$entry->study_name}}
+                {{$entry->study_id}}
                 </dd>
             </div>
             <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">

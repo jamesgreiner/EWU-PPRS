@@ -65,6 +65,7 @@
             font-weight: bold;
             color: white;
             }
+
             .page-header {
                 background-color:#b7142e;
                 border-bottom: black solid;
@@ -78,6 +79,7 @@
                 margin-bottom: 0;
                 text-align: center;
             }
+
             .faq-head {
                 font-size: x-large;
                 font-weight: bold;
@@ -87,6 +89,7 @@
                 background-color:grey;
                 color:white;
             }
+            
             .faq-body {
                 font-size: large;
                 font-weight: normal;
