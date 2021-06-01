@@ -25,9 +25,9 @@ class EntryController extends Controller
     public function show($id)
     {
         $entry = Entry::findorfail($id);
-        $file = File::findorfail($id);
+        $files = File::all();
        
-        return view('research.show', ['entry' => $entry],['file' => $file]);    
+        return view('research.show', ['entry' => $entry],['files' => $files]);    
     }
     public function store()
     {

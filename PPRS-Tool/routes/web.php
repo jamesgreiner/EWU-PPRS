@@ -18,6 +18,9 @@ Route::get('/project-info', function () {
 //handles routing for research folder index and show
 Route::resource('research',\App\Http\Controllers\EntryController::class);
 
+Route::get('download', [MultipleFileUploadContoller::class, 'download']);
+
+
 //for viewing frequently asked questions
 Route::get('/faq', function () {
     return view('faq');
