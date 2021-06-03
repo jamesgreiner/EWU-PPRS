@@ -24,7 +24,7 @@ class MultipleFileUploadContoller extends Controller
 
         $validatedData = $request->validate([
         'files' => 'required',
-        'files.*' => 'mimes:csv,txt,xlx,xls,pdf,jpg'
+        'files.*' => 'mimes:csv,txt,xlsx,xls,pdf,jpg,png'
         ]);
  
  
