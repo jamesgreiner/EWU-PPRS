@@ -1,9 +1,11 @@
 # EWU-PPRS
 Management tool for the Eastern Washington University Palouse Prairie Restoration Site
 
-***********************************************************************************************************************************************************************************
+*View the raw file on here for better formatting.
+
+*********************************************************************************************************************************************************************************
 First, please fork this repository and create your own repository and create a backup copy of it on your own device or somewhere else. There is no guarantee this repository will continue to be here and the former contributors are not responsible for continued work and/or questions about the project.
-***********************************************************************************************************************************************************************************
+*********************************************************************************************************************************************************************************
 
 Languages/frameworks/libraries required:
 *Note you are responsible for following all directions on the documentation pages for proper installation, we ran our version of the project on Windows 10.
